@@ -40,5 +40,16 @@
   <a class="button" href="./dj_request_system.apk" download>Download for Android (APK)</a>
 
   <p style="margin-top: 2rem;">Need help? Contact us at your DJ support channel.</p>
-</body>
+</body><script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        console.log('ServiceWorker registered: ', registration);
+      }, function (err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+</script>
+
 </html>
